@@ -30,7 +30,7 @@ def display_options(account_a, account_b):
     
 
     option1 = f"Compare A: {account_a['name']}, {account_a['description']}, {account_a['country']}"
-    option2 =  f"Compare B: {account_b['name']}, {account_b['description']}, {account_b['country']}"
+    option2 =  f"Against B: {account_b['name']}, {account_b['description']}, {account_b['country']}"
     print(art.logo)
     print(option1)
     print(art.vs)
@@ -63,6 +63,8 @@ def play_game():
 
     account_a = select_account()
     account_b = select_account()
+    while account_a == account_b:
+        account_b = select_account()
 
     while play:
         display_options(account_a, account_b)
